@@ -19,18 +19,18 @@ public class LaundryService {
 
     public LaundryMachine chooseMachine() {
 
-        Scanner s = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Vælg ledig maskine");
         int counter = 1;
 
         for (LaundryMachine laundryMachine : machines) {
 
-            System.out.println(counter + ". " + laundryMachine);
+            System.out.println(counter + ") " + laundryMachine);
             counter++;
 
         }
 
-        int choice = s.nextInt();
+        int choice = scanner.nextInt();
 
         if (choice >= 1 && choice <= machines.size()) {
 

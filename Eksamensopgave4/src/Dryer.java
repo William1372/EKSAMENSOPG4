@@ -115,4 +115,11 @@ public class Dryer implements LaundryMachine{
 
     }
 
+    // Til JUnit testing
+    public double updatedPrice(int duration){
+
+        return price = duration * 0.5;
+
+    }
+
 }

@@ -93,6 +93,7 @@ public class WashingMachine implements LaundryMachine{
     public void addExtra() {
 
         price += 5;
+        duration += 5;
         displayPriceAndDuration();
 
     }
