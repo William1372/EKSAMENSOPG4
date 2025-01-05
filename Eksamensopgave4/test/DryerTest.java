@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DryerTest {
 
+    // Test for at se om tørretumblerens pris-beregner-metode fungerer
     @Test
     void totalShouldEqualFifty(){
 

@@ -1,0 +1,70 @@
+@startuml
+!pragma layout smetana
+
+interface LaundryMachine{
+
+    + void chooseProgram()
+    + void displayPriceAndDuration()
+    + void start()
+    + void addExtra()
+
+}
+
+class Dryer implements LaundryMachine{
+
+    - int duration
+    - double price
+
+    + Dryer()
+    + void chooseProgram()
+    + void displayPriceAndDuration()
+    + void start()
+    + void addExtra()
+    + void updatePrice(int duration)
+    + void setDuration(int duration)
+    + String toString()
+    + void exit()
+    + double updatedPrice(int duration)
+
+}
+
+class WashingMachine implements LaundryMachine{
+
+    - int duration
+    - boolean isRunning
+    - int capacity
+    - double price
+
+    + WashingMachine(int capacity)
+    + void chooseProgram()
+    + void displayPriceAndDuration()
+    + void start()
+    + void addExtra()
+    + void updateTotalDue(double weight)
+    + void setDuration(int duration)
+    + String toString()
+
+}
+
+class LaundryService{
+
+    - ArrayList<LaundryMachine> machines
+
+    + LaundryService()
+    + void addMachine(LaundryMachine laundryMachine)
+    + LaundryMachine chooseMachine()
+
+}
+
+class Main{
+
+    + static void main(String[] args)
+
+}
+
+LaundryMachine <|-- Dryer : implements
+LaundryMachine <|-- WashingMachine : implements
+Main ..> LaundryService
+LaundryService --> LaundryMachine : has-a
+
+@enduml
